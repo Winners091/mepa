@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉGLISE LA MISSION ÉVANGÉLIQUE PIERRE ANGULAIRE LE MANS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Vision Section */
+        .vision-section {
+            position: relative;
+            color: white;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(30, 64, 175, 0.8));
+            z-index: 2;
+        }
+
+        .vision-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .vision-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .vision-content blockquote {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .vision-content blockquote:hover {
+            transform: translateY(-25px);
+        }
+
+        .vision-content blockquote p:first-child {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .vision-content blockquote p:last-child {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.9)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.05"><circle cx="50" cy="50" r="2"/><circle cx="20" cy="20" r="1"/><circle cx="80" cy="30" r="1.5"/><circle cx="30" cy="80" r="1"/><circle cx="70" cy="70" r="1.5"/></svg>');
+            background-size: 200px 200px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn.primary {
+            background: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Doctrine Section */
+        .doctrine-section {
+            background: var(--bg-light);
+            padding: 6rem 2rem;
+        }
+
+        .doctrine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .doctrine-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .doctrine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .doctrine-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .doctrine-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .doctrine-card .verse {
+            color: var(--accent-color);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(30, 64, 175, 0.05));
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .schedule-day {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .schedule-time {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .schedule-event {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Pastor Section */
+        .pastor-section {
+            background: var(--bg-light);
+            padding: 6rem 2rem;
+        }
+
+        .pastor-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pastor-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pastor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient);
+        }
+
+        .pastor-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .pastor-title {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .pastor-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--text-light);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 2rem;
+        }
+
+        /* Members Section */
+        .members-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .member-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.05"><path d="M0,0 L100,100 M100,0 L0,100"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .vision-content h2 {
+                font-size: 2rem;
+            }
+
+            .vision-content blockquote {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .card-grid,
+            .doctrine-grid,
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctrine-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctrine-card {
+                min-width: auto;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo de l'Église">
+                ÉGLISE LA MISSION ÉVANGÉLIQUE<br>PIERRE ANGULAIRE LE MANS
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#welcome">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctrine">Doctrine</a></li>
+                <li><a href="#schedule">Programme</a></li>
+                <li><a href="#pastor">Pasteur</a></li>
+                <li><a href="#members">Partenaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="vision" class="vision-section">
+            <div class="video-background">
+                <video autoplay muted loop playsinline id="vision-video">
+                    <source src="sortie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-overlay"></div>
+            <div class="vision-content">
+                <h2>Notre Vision</h2>
+                <blockquote>
+                    <p><i class="fas fa-bible"></i> Matthieu 28:19</p>
+                    <p>"Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint Esprit."</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="welcome" class="hero">
+            <div class="hero-content">
+                <h1>L'AMOUR DU CHRIST NOUS RASSEMBLE</h1>
+                <p>Une communauté vivante, enracinée dans la foi. "Sur cette pierre, je bâtirai mon Église." - Matthieu 16:18</p>
+                <p>À MEPA Le Mans, nous croyons en une Église unie, remplie de l'amour de Christ. L'amour du Christ nous rassemble, au-delà des différences, pour vivre une foi authentique, active et transformante.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">
+                        <i class="fas fa-calendar-plus"></i>
+                        Planifier une Visite
+                    </a>
+                    <a href="#services" class="btn secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Nos Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section fade-in">
+            <h2 class="section-title">Nos Services</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <h3>Culte Dominical</h3>
+                    <p>Rejoignez-nous chaque dimanche de 14h00 à 16h30 pour un temps d'adoration, de prière et d'enseignement biblique dans la présence de Dieu.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <h3>Intercession</h3>
+                    <p>Temps de prière collective chaque mercredi de 18h30 à 19h30 pour porter les besoins de la communauté et du monde devant Dieu.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Réunion de Prière</h3>
+                    <p>Chaque jeudi de 20h00 à 21h00, nous nous rassemblons pour chercher la face de Dieu dans la prière et l'adoration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctrine" class="doctrine-section fade-in">
+            <h2 class="section-title">Notre Doctrine</h2>
+            <div class="doctrine-grid">
+                <div class="doctrine-card">
+                    <h4>1. La Trinité</h4>
+                    <p>Nous croyons en la Trinité : Père, Fils, Esprit Saint.</p>
+                    <div class="verse">(Matthieu 28:19) (Jean 14:26)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>2. La Parole de Dieu</h4>
+                    <p>Nous croyons à la parole de Dieu écrite sur les feuilles (La sainte Bible).</p>
+                    <div class="verse">(Jean 6:63) (Psaumes 1:2,3) (Josué 1:8)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>3. La Prière</h4>
+                    <p>Nous croyons en la puissance de la prière.</p>
+                    <div class="verse">(Matthieu 21:22) (Marc 11:24) (1 Thessaloniciens 5:17)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>4. La Repentance</h4>
+                    <p>Nous prêchons la repentance selon les Écritures.</p>
+                    <div class="verse">(Luc 24:47) (Marc 6:12)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>5. Les Trois Baptêmes</h4>
+                    <p>Baptême d'eau, de l'Esprit Saint, et de feu.</p>
+                    <div class="verse">(Matthieu 3:11)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>6. La Sainte Cène</h4>
+                    <p>Nous pratiquons la communion selon l'institution du Christ.</p>
+                    <div class="verse">(Jean 6:51,58) (Luc 22:19) (1 Corinthiens 11:23-34)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>7. L'Imposition des Mains</h4>
+                    <p>Nous croyons en l'imposition des mains pour le ministère.</p>
+                    <div class="verse">(2 Timothée 1:6) (1 Timothée 4:14)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>8. L'Onction d'Huile</h4>
+                    <p>Nous pratiquons l'onction d'huile pour la guérison.</p>
+                    <div class="verse">(Jacques 5:14) (Marc 6:13)</div>
+                </div>
+                <div class="doctrine-card">
+                    <h4>9. Le Plus Grand Commandement</h4>
+                    <p>L'amour du Seigneur Jésus Christ est au centre de notre foi.</p>
+                    <div class="verse">(Marc 12:30-31)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="schedule-section fade-in">
+            <h2 class="section-title">Programme de l'Église</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light); font-size: 1.1rem;">
+                Voici les événements à venir à MEPA Le Mans. Rejoignez-nous dans la prière, la louange, l'enseignement et la communion fraternelle. 
+                Dieu agit à chaque rencontre, et chaque rendez-vous est une opportunité de croissance et de transformation.
+            </p>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <div class="schedule-day">MERCREDI</div>
+                    <div class="schedule-time">18H30 - 19H30</div>
+                    <div class="schedule-event">INTERCESSION</div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-day">JEUDI</div>
+                    <div class="schedule-time">20H00 - 21H00</div>
+                    <div class="schedule-event">PRIÈRE</div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-day">DIMANCHE</div>
+                    <div class="schedule-time">14H00 - 16H30</div>
+                    <div class="schedule-event">CULTE D'ADORATION</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pastor" class="pastor-section fade-in">
+    <h2 class="section-title">Notre Pasteur</h2>
+    <div class="pastor-content">
+      <div class="pastor-card">
+        <div class="pastor-name">DADDY KUSAVU</div>
+        <div class="pastor-title">Pasteur Responsable</div>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">
+          Serviteur de Dieu appelé à diriger l'Église La Mission Évangélique Pierre Angulaire au Mans. Il est animé par la passion de voir les vies transformées par l'Évangile de Jésus-Christ, formant des disciples enracinés dans la Parole et dans l'amour.
+        </p>
+        <div class="pastor-contact">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>contact@mepa-lemans.fr</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+33 6 12 34 56 78</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="members" class="members-section fade-in">
+            <h2 class="section-title">Nos Partenaires</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <img src="member1.jpg" alt="Membre 1" class="member-image">
+                    <div class="member-content">
+                        <h3 class="member-name">Prenom nom de famille</h3>
+                        <div class="member-role">Ancienne</div>
+                        <p class="member-description">Description à venir</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="member2.jpg" alt="Membre 2" class="member-image">
+                    <div class="member-content">
+                        <h3 class="member-name">Jane Smith</h3>
+                        <div class="member-role">Choriste</div>
+                        <p class="member-description">Musicienne talentueuse qui dirige le groupe de louange. Elle apporte une atmosphère de joie et d'adoration à chaque culte.</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="member3.jpg" alt="Membre 3" class="member-image">
+                    <div class="member-content">
+                        <h3 class="member-name">Michael Johnson</h3>
+                        <div class="member-role">Évangeliste</div>
+                        <p class="member-description">Passionné par l'évangélisation, il participe activement aux missions locales et internationales de l'église.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  <section id="contact" class="contact-section fade-in">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Adresse</h3>
+        <p>123 Rue de la Foi, 72000 Le Mans, France</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>contact@mepa-lemans.fr</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Téléphone</h3>
+        <p>+33 6 12 34 56 78</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Église La Mission Évangélique Pierre Angulaire - Le Mans. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    // Scroll animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
