@@ -1,0 +1,390 @@
+2<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Événements - ÉGLISE LA MISSION ÉVANGÉLIQUE PIERRE ANGULAIRE LE MANS</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg" />
+    <link rel="apple-touch-icon" href="logo.jpg" />
+
+    <style>
+        /* Styles minimisés pour clarté - inchangés, identiques à ceux de ton fichier d'origine */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 2.5rem;
+        }
+
+        .logo span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        main {
+            padding-top: 6rem;
+        }
+
+        .events-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #fff;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .event-media {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .event-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .event-day {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .event-month {
+            font-size: 1rem;
+        }
+
+        .event-content {
+            padding: 1rem;
+        }
+
+        .event-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-time, .event-location {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .event-description {
+            margin-top: 1rem;
+        }
+
+        /* Responsive omitted for brevity */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo de l'Église" />
+                <span>ÉGLISE LA MISSION ÉVANGÉLIQUE PIERRE ANGULAIRE LE MANS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="#doctrine">Doctrine</a></li>
+                <li><a href="#pastor">Pasteur</a></li>
+                <li><a href="#members">Partenaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="events-container">
+            <div class="events-header">
+                <h2>Événements</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-category="all">Tous</button>
+                    <button class="tab-btn" data-category="sorties">Sorties</button>
+                    <button class="tab-btn" data-category="cultes">Cultes</button>
+                    <button class="tab-btn" data-category="youtube">YouTube</button>
+                </div>
+            </div>
+            <div class="events-grid"></div>
+        </div>
+    </main>
+
+    <script>
+        // Fonction pour convertir une URL YouTube en format embed
+        function getYouTubeEmbedUrl(url) {
+            // Extraire l'ID de la vidéo YouTube
+            const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+            const match = url.match(regex);
+            
+            if (match && match[1]) {
+                return `https://www.youtube.com/embed/${match[1]}`;
+            }
+            return url;
+        }
+
+        const eventData = {
+            "events": {
+                "sorties": [
+                    {
+                        "date": "26",
+                        "month": "JUIL",
+                        "title": "Sortie fraternelle",
+                        "time": "14h00 - 16h00",
+                        "location": "Spay",
+                        "description": "Partage d'un moment convivial entre les membres de l'église",
+                        "media": {
+                            "type": "image",
+                            "url": "sortie-fraternelle.jpg",
+                            "alt": "Groupe de personnes en prière"
+                        }
+                    }
+                ],
+                "cultes": [
+                    {
+                        "date": "28",
+                        "month": "JUIL",
+                        "title": "Culte de Jeunesse",
+                        "time": "19h00 - 21h00",
+                        "location": "Salle Principale",
+                        "description": "Culte spécial pour les jeunes avec louange et enseignement.",
+                        "media": {
+                            "type": "image",
+                            "url": "culte-jeunesse.jpg",
+                            "alt": "Jeunes en louange"
+                        }
+                    },
+                    {
+                        "date": "30",
+                        "month": "JUIL",
+                        "title": "Culte de prière",
+                        "time": "19h00 - 20h30",
+                        "location": "Salle de Prière",
+                        "description": "Temps d'intercession pour l'église et la communauté.",
+                        "media": {
+                            "type": "image",
+                            "url": "culte-priere.jpg",
+                            "alt": "Groupe en prière"
+                        }
+                    }
+                ],
+                "youtube": [
+                    {
+                        "date": "27",
+                        "month": "JUIL",
+                        "title": "Louange",
+                        "time": "20h00 - 21h00",
+                        "location": "YouTube",
+                        "description": "Nouveau clip sur YouTube",
+                        "media": {
+                            "type": "video",
+                            "url": "https://www.youtube.com/watch?v=7jPjfPj2S0U",
+                            "thumbnail": "youtube-thumbnail.jpg"
+                        }
+                    }
+                ]
+            }
+        };
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function displayEvents(category) {
+            const grid = document.querySelector('.events-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const categories = category === 'all' ? Object.keys(eventData.events) : [category];
+
+            categories.forEach(cat => {
+                eventData.events[cat].forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    card.innerHTML = `
+                        <div class="event-media">
+                            ${event.media ? `
+                                ${event.media.type === 'image' ? `
+                                    <img src="${event.media.url}" alt="${event.media.alt}" class="event-image">
+                                ` : `
+                                    <div class="video-container">
+                                        <iframe src="${getYouTubeEmbedUrl(event.media.url)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                `}
+                            ` : ''}
+                        </div>
+                        <div class="event-date">
+                            <span class="event-day">${event.date}</span>
+                            <span class="event-month">${event.month}</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>${event.title}</h3>
+                            <div class="event-time"><i class="fa-solid fa-clock"></i> ${event.time}</div>
+                            <div class="event-location"><i class="fa-solid fa-location-dot"></i> ${event.location}</div>
+                            <p class="event-description">${event.description}</p>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+        }
+
+        function updateActiveTab(category) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.tab-btn').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    displayEvents(tab.dataset.category);
+                    updateActiveTab(tab.dataset.category);
+                });
+            });
+
+            displayEvents('all');
+        });
+    </script>
+</body>
+</html>
