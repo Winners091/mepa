@@ -6,6 +6,14 @@
     <title>ÉGLISE LA MISSION ÉVANGÉLIQUE PIERRE ANGULAIRE LE MANS</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset and base styles */
         * {
@@ -122,19 +130,12 @@
         /* Vision Section */
         .vision-section {
             position: relative;
-            color: white;
             min-height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
             overflow: hidden;
         }
 
@@ -484,7 +485,7 @@
 
         .schedule-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         .schedule-day {
@@ -502,21 +503,23 @@
         }
 
         .schedule-event {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #1f2937;
         }
 
         /* Pastor Section */
         .pastor-section {
-            background: var(--bg-light);
+            background: #f9fafb;
             padding: 6rem 2rem;
         }
 
         .pastor-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .pastor-card {
@@ -526,6 +529,29 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pastor-image {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pastor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pastor-info {
+            text-align: center;
         }
 
         .pastor-card::before {
@@ -696,68 +722,6 @@
 
         .footer-content {
             position: relative;
-            z-index: 2;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .vision-content h2 {
-                font-size: 2rem;
-            }
-
-            .vision-content blockquote {
-                padding: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .card-grid,
-            .doctrine-grid,
-            .schedule-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .doctrine-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .doctrine-card {
-                min-width: auto;
-            }
         }
 
         /* Scroll animations */
@@ -787,6 +751,7 @@
                 <li><a href="#welcome">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctrine">Doctrine</a></li>
+                <li><a href="events.html">Événements</a></li>
                 <li><a href="#schedule">Programme</a></li>
                 <li><a href="#pastor">Pasteur</a></li>
                 <li><a href="#members">Partenaires</a></li>
@@ -799,7 +764,7 @@
         <section id="vision" class="vision-section">
             <div class="video-background">
                 <video autoplay muted loop playsinline id="vision-video">
-                    <source src="sortie.mp4" type="video/mp4">
+                    <source src="videos/sortie.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="video-overlay"></div>
@@ -934,29 +899,29 @@
         </section>
 
         <section id="pastor" class="pastor-section fade-in">
-    <h2 class="section-title">Notre Pasteur</h2>
-    <div class="pastor-content">
-      <div class="pastor-card">
-        <div class="pastor-name">DADDY KUSAVU</div>
-        <div class="pastor-title">Pasteur Responsable</div>
-        <p style="color: var(--text-light); margin-bottom: 2rem;">
-          Serviteur de Dieu appelé à diriger l'Église La Mission Évangélique Pierre Angulaire au Mans. Il est animé par la passion de voir les vies transformées par l'Évangile de Jésus-Christ, formant des disciples enracinés dans la Parole et dans l'amour.
-        </p>
-        <div class="pastor-contact">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>kusavu19@outlook.fr</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>+33 6 12 34 56 78</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <h2 class="section-title">Notre Pasteur</h2>
+            <div class="pastor-content">
+                <div class="pastor-card">
+                    <div class="pastor-image">
+                        <img src="Pasteur.jpg" alt="Pasteur DADDY KUSAVU" loading="lazy">
+                    </div>
+                    <div class="pastor-info">
+                        <div class="pastor-name">DADDY KUSAVU</div>
+                        <div class="pastor-title">Pasteur Responsable</div>
+                        <p>Né à Kinshasa, République Démocratique du Congo, DADDY KUSAVU est marié à KIM et père de 4 enfants. 
+                        Il a reçu l'appel de Dieu à l'âge de 16 ans et a été ordonné Pasteur en 2008. Il a servi dans plusieurs ministères 
+                        en République Démocratique du Congo et en France avant de fonder l'Église La Mission Évangélique Pierre Angulaire 
+                        Le Mans en 2017. Il est également auteur de plusieurs livres et conférencier international.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 7 58 39 95 27</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="members" class="members-section fade-in">
+        <section id="members" class="members-section fade-in">
             <h2 class="section-title">Nos Partenaires</h2>
             <div class="members-grid">
                 <div class="member-card">
@@ -970,68 +935,65 @@
                 <div class="member-card">
                     <img src="member2.jpg" alt="Membre 2" class="member-image">
                     <div class="member-content">
-                        <h3 class="member-name">Prenom nom de famille</h3>
-                        <div class="member-role">Description à venir</div>
-                        <p class="member-description">escription à venir.</p>
+                        <h3 class="member-name">Maman Roseline</h3>
+                        <div class="member-role">Ancienne</div>
+                        <p class="member-description">Description à venir.</p>
                     </div>
                 </div>
                 <div class="member-card">
                     <img src="member3.jpg" alt="Membre 3" class="member-image">
                     <div class="member-content">
-                        <h3 class="member-name">Prenom nom de famille</h3>
-                        <div class="member-role">Description à venir</div>
-                        <p class="member-description">escription à venir.</p>
+                        <h3 class="member-name">Frère Alain</h3>
+                        <div class="member-role">Annonciateur</div>
+                        <p class="member-description">Description à venir.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-  <section id="contact" class="contact-section fade-in">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Adresse</h3>
-        <p>40 Rue de Vert Galant, 72100 Le Mans, France</p>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>kusavu19@outlook.fr</p>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-phone"></i>
-        <h3>Téléphone</h3>
-        <p>+33 6 12 34 56 78</p>
-      </div>
-    </div>
-  </section>
+        <section id="contact" class="contact-section fade-in">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adresse</h3>
+                    <p>40 Rue de Vert Galant, 72100 Le Mans, France</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>kusavu19@outlook.fr</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Téléphone</h3>
+                    <p>+33 7 58 39 95 27</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 ÉGLISE LA MISSION ÉVANGÉLIQUE PIERRE ANGULAIRE LE MANS.</p>
+    </footer>
+</body>
+</html>
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Église La Mission Évangélique Pierre Angulaire - Le Mans. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <script>
-    function toggleMobileMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
-    }
-
+<script>
     // Scroll animations
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
 
-    fadeEls.forEach(el => observer.observe(el));
-  </script>
+        fadeEls.forEach(el => observer.observe(el));
+    });
+</script>
 </body>
 </html>
